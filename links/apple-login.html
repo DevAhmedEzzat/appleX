@@ -164,12 +164,12 @@ body {
       apples.forEach(a => a.classList.remove("selected"));
       e.currentTarget.classList.add("selected");
     }
-
+/*
     apples.forEach(apple => {
       apple.addEventListener("click", selectApple); // للكمبيوتر
       apple.addEventListener("touchstart", selectApple, { passive: true }); // للموبايل
     });
-
+*/
     startBtn.addEventListener("click", () => {
       apples.forEach(apple => apple.classList.remove("selected"));
       const randomIndex = Math.floor(Math.random() * apples.length);
