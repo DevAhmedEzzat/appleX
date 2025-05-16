@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Apple in</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      height: 100vh;
+      margin: 10px;
+    }
+    .title{
+      color: black;
+      font-size: 20px;
+      font-weight:bolder;
+      margin: 15px;
+      text-align: center;
+    }
+     
+    .text {
+      color: black;
+      font-size: 20px;
+      margin: 15px;
+      text-align: center;
+    }
+    .btn{
+      margin: 5px;
+      border-radius: 15px;
+    }
+    .line{
+      height:2px;
+      border-width:initial;
+      width: 100%;
+      background-color:#8cc152;
+      background: #8cc152;
+    }
+    .container{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .game{
+      margin-top:200px ;
+    }
+    .apple-logo {
+      width: 600px;
+      height: 600px;
+      margin-bottom: 15px;
+      border-radius: 50px;
+    }
+
+    
+
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 16px;
+    }
+    
+    .checkbox-container {
+      text-align: right;
+      margin: 15px 0;
+    }
+    
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .checkbox {
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #7ab648;
+      background: white;
+    }
+    
+    .submit-btn {
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 14px 30px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 150px;
+      margin-top: 15px;
+    }
+    
+    .glyphicon{
+      font-size: 75px;
+      color:red;
+    }
+
+    .apple{
+      font-size: 30px;
+      cursor: pointer;
+      color: red;
+      margin: 5px;
+    }
+
+    .selected {
+      color: green;
+    }
+
+    /* Responsive Design */
+   @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    .title{
+      color: black;
+      font-size: 20px;
+      font-weight:bolder;
+      margin: 15px;
+      text-align: center;
+    }
+     
+    .text {
+      color: black;
+      font-size: 10px;
+      margin: 15px;
+      text-align: center;
+    }
+    .apple{
+      font-size: 25px;
+      color:red;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Apple logo -->
+      <a href="#" class="apple-logo" viewBox="0 0 100 100">
+        <span class="glyphicon glyphicon-apple"></span>
+        </a>
+        <p class="title">Apple BET <sub><span style="color: green;">v1.0 Sisa05</span></sub></p>
+        <hr class="line">
+    <!-- Main Arabic text -->
+     <div class="hero">
+      <button id="back" class="btn"><i class="fa fa-close" style="font-size:24px"></i></button>
+    <h3 class="text">يجب التسجيل بالبروموكود <bdi>Sisa05</bdi> لتشغيل الاسكربت بدون اي اخطاء. </h3>
+    </div>
+    <!-- Secondary red Arabic text -->
+    <div class="game">
+    <!-- BET ID input field -->
+    <button type="button" class="btn btn-default btn-sm">
+      <span id="demo" onclick="myFunction()" class="glyphicon glyphicon-apple apple"></span>
+    </button>
+    <button type="button" class="btn btn-default btn-sm">
+          <span  class="glyphicon glyphicon-apple apple"></span>
+        </button>
+      <button type="button" class="btn btn-default btn-sm">
+        <span  class="glyphicon glyphicon-apple apple"></span>
+      </button>
+      <button type="button" class="btn btn-default btn-sm">
+          <span  class="glyphicon glyphicon-apple apple"></span>
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+          <span  class="glyphicon glyphicon-apple apple"></span>
+        </button>        
+        <!-- Submit button -->
+     <div>
+    <button id="start" class="submit-btn">START</button>
+    <button id="again" class="submit-btn">AGAIN</button>
+    </div>
+    <p class="text">Sisa05</p>
+    </div>
+  </div>
+  <script>
+   const apples = document.querySelectorAll(".apple");
+   const startBtn = document.getElementById("start");
+   const againBtn = document.getElementById("again");
+    const backBtn = document.getElementById("back");
+
+  apples.forEach(apple => {
+    apple.addEventListener("click", () => {
+      apples.forEach(a => a.classList.remove("selected")); // الكل يرجع احمر
+      apple.classList.add("selected"); // اللي اتداس عليه يبقى اخضر
+    });
+  });
+
+  // لما ندوس على الزرار "AGAIN"
+  againBtn.addEventListener("click", () => {
+    apples.forEach(apple => apple.classList.remove("selected")); // رجّع الكل أحمر
+  });
+
+  startBtn.addEventListener("click", () => {
+    apples.forEach(apple => apple.classList.remove("selected")); // امسح التحديد القديم
+    const randomIndex = Math.floor(Math.random() * apples.length); // اختيار عشوائي
+    apples[randomIndex].classList.add("selected"); // عيّن التفاحة العشوائية
+  });
+
+   // زر الرجوع للصفحة السابقة
+  backBtn.addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
+</body>
+</html>

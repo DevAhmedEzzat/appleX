@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Apple login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+  body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(10, 219, 141, 0.8));
+    }
+    
+    .form-container {
+      width: 320px;
+      border-radius: 25px;
+      background-color: #f5ffed;
+      padding: 20px;
+      box-shadow: 0 30px 30px rgba(33, 207, 10, 0.911);
+      text-align: center;
+    }
+    
+    .apple-logo {
+      width: 500px;
+      height: 500px;
+      margin-bottom: 15px;
+      border-radius: 50px;
+    }
+
+    .glyphicon{
+      font-size:75px;
+      color:red;
+    }
+
+    .input-field {
+      font-size: 16px;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(33, 207, 10, 0.911);
+    }
+    
+    .checkbox-container {
+      margin: 15px 0px;
+    }
+    
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+    }
+    
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #7ab648;
+      background: white;
+    }
+    
+    .submit-btn {
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 14px 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      width: 150px;
+      margin-top: 15px;
+    }
+    
+    .arabic-text {
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .red-text {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Apple logo -->
+      <a href="#" class="apple-logo" viewBox="0 0 100 100">
+        <span class="glyphicon glyphicon-apple"></span>
+        </a>
+    
+    <!-- Main Arabic text -->
+    <h3 class="arabic-text">Put your IP</h3>
+    <!-- Secondary red Arabic text -->
+    <p class="red-text">The account must be registered with the promo code</p>
+    
+    <!-- BET ID input field -->
+    <form action="links/apple-login.html" method="get" id="nameform">
+      <input type="text" class="input-field" placeholder="BET ID">
+    </form>
+
+    <!-- Checkboxes -->
+    <div class="checkbox-container">
+      <label class="checkbox-label">
+        <input type="checkbox" class="checkbox">
+        <span>registered with the promo code</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" class="checkbox">
+        <span>made a deposit</span>
+      </label>
+    </div>
+    
+    <!-- Submit button -->
+    <button  class="submit-btn" type="submit" form="nameform" value="Submit">Submit</button>
+    </div>
+  </body>
+</html>
