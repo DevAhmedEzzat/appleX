@@ -111,7 +111,11 @@
     .selected {
       color: green;
     }
-
+.game{
+       display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(5, 1fr);
+    }
     /* Responsive Design */
    @media (max-width: 768px) {
     .hero h1 {
@@ -135,14 +139,9 @@
       margin: 15px;
       text-align: center;
     }
-    .game{
-       display: grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(5, 1fr);
-    }
+    
     .apple{
       font-size: 25px;
-      color:red;
     }
     #submit-btn {
       font-size: 10px;
